@@ -27,11 +27,11 @@ const NavBar = () => {
         <NavLink
           to="/allFoodItems"
           className={({ isActive, isPending }) =>
-            isPending
-              ? "pending"
-              : isActive
-              ? "active"
-              : "text-blue-300 font-bold"
+          isPending
+          ? "pending"
+          : isActive
+          ? "bg-blue-600 text-white font-bold"
+          : "text-blue-300 font-bold"
           }
         >
           All Food Items
@@ -41,7 +41,12 @@ const NavBar = () => {
         <NavLink
           to="/blog"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "active" : "text-blue-300 font-bold"
+          isPending
+          ? "pending"
+          : isActive
+          ? "bg-blue-600 text-white font-bold"
+          : "text-blue-300 font-bold"
+        
           }
         >
           Blog
@@ -119,12 +124,27 @@ const NavBar = () => {
                 >
                   <li>
                     <button className="btn btn-sm btn-ghost">
-                      {user.displayName}
+                     Name: {user.displayName}
+                    </button>
+                  </li>
+                  <li>
+                    <button className="btn btn-sm btn-ghost">
+                     My Added Food Item
+                    </button>
+                  </li>
+                  <li>
+                    <button className="btn btn-sm btn-ghost">
+                     Add a Food Item
+                    </button>
+                  </li>
+                  <li>
+                    <button className="text-center btn btn-sm btn-ghost">
+                     My Ordered Food items
                     </button>
                   </li>
                   <li>
                     <button
-                      className="btn btn-sm btn-ghost"
+                      className="btn btn-sm btn-ghost mt-4"
                       onClick={handleLogOut}
                     >
                       Log Out
