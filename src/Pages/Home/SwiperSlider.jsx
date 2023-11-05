@@ -1,24 +1,36 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/scrollbar';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import { Keyboard, Scrollbar, Navigation, Pagination } from 'swiper/modules';
+import "swiper/css";
+import "swiper/css/scrollbar";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Keyboard, Scrollbar, Navigation, Pagination } from "swiper/modules";
 // import './styles.css';
-import BreadLemon from '../../assets/images/sliderImage/BreadLemon.jpg'
+import BreadLemon from "../../assets/images/sliderImage/BreadLemon.jpg";
 // import BreadMilk from '../../assets/images/sliderImage/Bread-with-milk.jpg'
-import pizza from '../../assets/images/sliderImage/pizza.jpg'
-import steak from '../../assets/images/sliderImage/Steak-Dinner.jpg'
-import salmonMeal from '../../assets/images/sliderImage/meal-with-salmon.jpg'
-import meatBall from '../../assets/images/sliderImage/meatBall.jpg'
-import soup from '../../assets/images/sliderImage/cabbage-soup.jpg'
-import pudding from '../../assets/images/sliderImage/Carrot-Pudding.jpg'
+import pizza from "../../assets/images/sliderImage/pizza.jpg";
+import steak from "../../assets/images/sliderImage/Steak-Dinner.jpg";
+import salmonMeal from "../../assets/images/sliderImage/meal-with-salmon.jpg";
+import meatBall from "../../assets/images/sliderImage/meatBall.jpg";
+import soup from "../../assets/images/sliderImage/cabbage-soup.jpg";
+import pudding from "../../assets/images/sliderImage/Carrot-Pudding.jpg";
+import { useEffect } from "react";
+
+
+import { motion } from "framer-motion";
+
 const SwiperSlider = () => {
-    return (
-        <div>
-         <Swiper
+  useEffect(() => {
+    AOS.init();
+    // AOS.refresh();
+  }, []);
+
+  return (
+    <div>
+      <Swiper
         slidesPerView={1}
         centeredSlides={false}
         slidesPerGroupSkip={1}
@@ -40,49 +52,262 @@ const SwiperSlider = () => {
         modules={[Keyboard, Scrollbar, Navigation, Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide className=''>
-          <img className='' src={BreadLemon} />
+        <SwiperSlide className="">
+          <img className="" src={BreadLemon} />
           <div className="absolute rounded-xl flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00) 100%)]">
-          <div className="text-white font-bold lg:space-y-8 w-full pl-12 space-y-8  ">
-            <h1 className="lg:text-5xl text-4xl">Bread Lemon 
-          </h1>
-            <h1 className="lg:text-5xl">  <span className='text-secondary'>Affordable</span> Price
-          </h1>
+            <div className="text-white font-bold lg:space-y-8 w-full pl-12 space-y-8  ">
             
-            <div>
-              <button className="btn bg-blue-600 border-none text-white lg:mr-5 mr-1">Order Now!!</button>
-              <button className="btn btn-outline btn-secondary mr-1 lg:mr-5">
-              See Details
-              </button>
-              <button className="btn btn-outline btn-success">
-              All Food
-              </button>
+              <h1
+             
+               data-aos="fade-up"
+             
+              className="lg:text-5xl text-4xl hover:text-blue-600">Bread Lemon</h1>
+               
+              
+
+              <h1
+                data-aos="fade-up"
+               
+              >
+              
+                <span  className="text-secondary">Affordable</span> Price
+              </h1>
+
+              <div>
+                <button 
+                 data-aos="fade-up"
+                
+                className="btn bg-blue-600 border-none text-white lg:mr-5 mr-1">
+                  Order Now!!
+                </button>
+                <button
+                  data-aos="fade-up"
+                 
+                className="btn btn-outline btn-secondary mr-1 lg:mr-5">
+                  See Details
+                </button>
+                <button
+                  data-aos="fade-up"
+                
+                className="btn btn-outline btn-success">
+                  All Food
+                </button>
+              </div>
             </div>
           </div>
-        </div>
         </SwiperSlide>
         <SwiperSlide>
           <img src={pudding} />
+          <div className="absolute rounded-xl flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00) 100%)]">
+            <div className="text-white font-bold lg:space-y-8 w-full pl-12 space-y-8  ">
+         
+              <h1
+               data-aos="fade-up"
+              
+              className="lg:text-5xl text-4xl hover:text-blue-600">Carrot Pudding</h1>
+              
+            
+              <h1
+                data-aos="fade-up"       
+              >
+              
+                <span  className="text-secondary">Affordable</span> Price
+              </h1>
+
+              <div>
+                <button 
+                 data-aos="fade-up"
+                
+                className="btn bg-blue-600 border-none text-white lg:mr-5 mr-1">
+                  Order Now!!
+                </button>
+                <button
+                  data-aos="fade-up"
+                
+                className="btn btn-outline btn-secondary mr-1 lg:mr-5">
+                  See Details
+                </button>
+                <button
+                  data-aos="fade-up"
+                 
+                className="btn btn-outline btn-success">
+                  All Food
+                </button>
+              </div>
+            </div>
+          </div>
         </SwiperSlide>
-        <SwiperSlide>
-          <img src={pizza} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={steak} />
+        <SwiperSlide className="">
+          <img className="" src={steak} />
+          <div className="absolute rounded-xl flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00) 100%)]">
+            <div className="text-white font-bold lg:space-y-8 w-full pl-12 space-y-8  ">
+            
+              <h1
+             
+               data-aos="fade-up"
+             
+              className="lg:text-5xl text-4xl hover:text-blue-600">Steak</h1>
+               
+              
+
+              <h1
+                data-aos="fade-up"
+               
+              >
+              
+                <span  className="text-secondary">Affordable</span> Price
+              </h1>
+
+              <div>
+                <button 
+                 data-aos="fade-up"
+                
+                className="btn bg-blue-600 border-none text-white lg:mr-5 mr-1">
+                  Order Now!!
+                </button>
+                <button
+                  data-aos="fade-up"
+                 
+                className="btn btn-outline btn-secondary mr-1 lg:mr-5">
+                  See Details
+                </button>
+                <button
+                  data-aos="fade-up"
+                
+                className="btn btn-outline btn-success">
+                  All Food
+                </button>
+              </div>
+            </div>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
           <img src={salmonMeal} />
+          <div className="absolute rounded-xl flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00) 100%)]">
+            <div className="text-white font-bold lg:space-y-8 w-full pl-12 space-y-8  ">
+           
+              <h1
+               data-aos="fade-up"
+              
+              className="lg:text-5xl text-4xl hover:text-blue-600">Salmon Dish</h1>          
+         
+              <h1
+                data-aos="fade-up"       
+              >
+              
+                <span  className="text-secondary">Affordable</span> Price
+              </h1>
+
+              <div>
+                <button 
+                 data-aos="fade-up"
+                
+                className="btn bg-blue-600 border-none text-white lg:mr-5 mr-1">
+                  Order Now!!
+                </button>
+                <button
+                  data-aos="fade-up"
+                
+                className="btn btn-outline btn-secondary mr-1 lg:mr-5">
+                  See Details
+                </button>
+                <button
+                  data-aos="fade-up"
+                 
+                className="btn btn-outline btn-success">
+                  All Food
+                </button>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="">
+          <img className="" src={meatBall} />
+          <div className="absolute rounded-xl flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00) 100%)]">
+            <div className="text-white font-bold lg:space-y-8 w-full pl-12 space-y-8  ">
+            
+              <h1
+             
+               data-aos="fade-up"
+             
+              className="lg:text-5xl text-4xl hover:text-blue-600">Meat Ball</h1>
+               
+              
+
+              <h1
+                data-aos="fade-up"
+               
+              >
+              
+                <span  className="text-secondary">Affordable</span> Price
+              </h1>
+
+              <div>
+                <button 
+                 data-aos="fade-up"
+                
+                className="btn bg-blue-600 border-none text-white lg:mr-5 mr-1">
+                  Order Now!!
+                </button>
+                <button
+                  data-aos="fade-up"
+                 
+                className="btn btn-outline btn-secondary mr-1 lg:mr-5">
+                  See Details
+                </button>
+                <button
+                  data-aos="fade-up"
+                
+                className="btn btn-outline btn-success">
+                  All Food
+                </button>
+              </div>
+            </div>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img src={meatBall} />
+          <img src={pizza} />
+          <div className="absolute rounded-xl flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00) 100%)]">
+            <div className="text-white font-bold lg:space-y-8 w-full pl-12 space-y-8  ">
+           
+              <h1
+               data-aos="fade-up"
+              
+              className="lg:text-5xl text-4xl hover:text-blue-600">Pizza</h1>          
+         
+              <h1
+                data-aos="fade-up"       
+              >
+              
+                <span  className="text-secondary">Affordable</span> Price
+              </h1>
+
+              <div>
+                <button 
+                 data-aos="fade-up"
+                
+                className="btn bg-blue-600 border-none text-white lg:mr-5 mr-1">
+                  Order Now!!
+                </button>
+                <button
+                  data-aos="fade-up"
+                
+                className="btn btn-outline btn-secondary mr-1 lg:mr-5">
+                  See Details
+                </button>
+                <button
+                  data-aos="fade-up"
+                 
+                className="btn btn-outline btn-success">
+                  All Food
+                </button>
+              </div>
+            </div>
+          </div>
         </SwiperSlide>
-        <SwiperSlide>
-          <img src={soup} />
-        </SwiperSlide>
-        
-      </Swiper>   
-        </div>
-    );
+      </Swiper>
+    </div>
+  );
 };
 
 export default SwiperSlider;

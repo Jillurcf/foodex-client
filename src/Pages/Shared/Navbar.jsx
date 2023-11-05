@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from '../../assets/images/FHLogo.png'
 import { AuthContext } from "../../Providers/AuthProvider";
+import { motion } from "framer-motion"
 
 const NavBar = () => {
   const { user, loggedOut } = useContext(AuthContext);
@@ -98,7 +99,7 @@ const NavBar = () => {
           <a className="w-24">
             <img src={logo} alt="Logo Image" />
           </a>
-          <h1 className="px-2 text-3xl text-blue-600 font-extrabold">foodEX</h1>
+          <motion.h1 whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} className="px-2 text-3xl text-blue-600 font-extrabold">foodEX</motion.h1>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
