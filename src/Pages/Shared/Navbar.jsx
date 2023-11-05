@@ -12,7 +12,7 @@ const NavBar = () => {
         <NavLink
           to="/"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "active" : ""
+            isPending ? "pending" : isActive ? "bg-blue-600 text-white font-bold" : ""
           }
         >
           Home
@@ -22,7 +22,7 @@ const NavBar = () => {
         <NavLink
           to="/addproduct"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "active" : ""
+            isPending ? "pending" : isActive ? "active" : "text-blue-300 font-bold"
           }
         >
           Add Product
@@ -68,8 +68,8 @@ const NavBar = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div className=" w-full fixed z-40">
-      <div className="navbar lg:h-24 opacity-80 bg-green-200">
+    <div className=" pt-8 w-full fixed z-40">
+      <div className="navbar lg:h-24 opacity-80">
         <div className="navbar-start md:pl-60">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -98,7 +98,7 @@ const NavBar = () => {
           <a className="w-24">
             <img src={logo} alt="Logo Image" />
           </a>
-          <h1 className="px-2 text-2xl text-blue-800 font-bold">FoodHero</h1>
+          <h1 className="px-2 text-3xl text-blue-600 font-extrabold">foodEX</h1>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
@@ -134,7 +134,7 @@ const NavBar = () => {
             </div>
           ) : (
             <Link to="/signin">
-              <button className="btn btn-info">Login</button>
+              <button className="btn bg-blue-600 border-none rounded-7xl text-white">Login</button>
             </Link>
           )}
           

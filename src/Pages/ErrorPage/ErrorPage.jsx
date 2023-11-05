@@ -12,7 +12,7 @@ const ErrorPage = () => {
   
       <div className="flex h-screen items-center">
         <img className="w-[50vh] mx-auto" src={image} alt="" />
-        <button onClick={handleBackHome} className="absolute top-[55%] left-[55%] flex mx-auto btn btn-error">Back to Home</button>
+        <button onClick={handleBackHome} className="absolute top-[55%] left-[53%] flex mx-auto btn btn-error">Back to Home</button>
       </div>
      
 

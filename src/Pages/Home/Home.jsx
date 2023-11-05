@@ -1,5 +1,7 @@
 import { Helmet } from "react-helmet-async";
 
+import SwiperSlider from "./SwiperSlider";
+
 
 const Home = () => {
     return (
@@ -7,7 +9,7 @@ const Home = () => {
             <Helmet>
             <title>FoodHero | Home</title>
             </Helmet>
-            <h2 className="text-3xl">Home page</h2>
+           <SwiperSlider></SwiperSlider>
         </div>
     );
 };
