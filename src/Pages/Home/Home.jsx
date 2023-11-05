@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 
 import SwiperSlider from "./SwiperSlider";
+import AllFoodItem from "../AllFoodItem/AllFoodItem";
 
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
             <title>FoodHero | Home</title>
             </Helmet>
            <SwiperSlider></SwiperSlider>
+          
         </div>
     );
 };

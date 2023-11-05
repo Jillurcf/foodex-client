@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import logo from '../../assets/images/FHLogo.png'
 const Footer = () => {
   return (
-    <div>
+    <div className='bottom-0 w-full fixed'>
   <footer className="footer footer-center p-10 bg-gray-900 text-primary-content">
   <aside>
     <img className='w-1/2' src={logo} alt="" />

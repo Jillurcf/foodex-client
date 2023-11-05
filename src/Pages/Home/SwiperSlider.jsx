@@ -19,7 +19,6 @@ import soup from "../../assets/images/sliderImage/cabbage-soup.jpg";
 import pudding from "../../assets/images/sliderImage/Carrot-Pudding.jpg";
 import { useEffect } from "react";
 
-
 import { motion } from "framer-motion";
 
 const SwiperSlider = () => {
@@ -54,42 +53,42 @@ const SwiperSlider = () => {
       >
         <SwiperSlide className="">
           <img className="" src={BreadLemon} />
+          
           <div className="absolute rounded-xl flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00) 100%)]">
-            <div className="text-white font-bold lg:space-y-8 w-full pl-12 space-y-8  ">
             
-              
-              <motion.h1 whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} 
-               data-aos="fade-up"
-             
-              className="lg:text-5xl text-4xl hover:text-blue-600">Bread Lemon</motion.h1>
-               
-              
-
-              <h1
+            <div className="text-white font-bold lg:space-y-8 w-full pl-12 space-y-8  ">
+           
+              <motion.h1
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.8 }}
                 data-aos="fade-up"
-               
+                className="lg:text-5xl text-4xl hover:text-blue-600"
               >
-              
-                <span  className="text-secondary">Affordable</span> Price
+                Bread Lemon
+              </motion.h1>
+              {/* <p>Good Food Good Health</p> */}
+
+              <h1 className="text-3xl" data-aos="fade-up">
+                <span className="   text-secondary">Affordable</span> Price
               </h1>
 
               <div>
-                <button 
-                 data-aos="fade-up"
-                
-                className="btn bg-blue-600 border-none text-white lg:mr-5 mr-1">
+                <button
+                  data-aos="fade-up"
+                  className="btn bg-blue-600 border-none text-white lg:mr-5 mr-1"
+                >
                   Order Now!!
                 </button>
                 <button
                   data-aos="fade-up"
-                 
-                className="btn btn-outline btn-secondary mr-1 lg:mr-5">
+                  className="btn btn-outline btn-secondary mr-1 lg:mr-5"
+                >
                   See Details
                 </button>
                 <button
                   data-aos="fade-up"
-                
-                className="btn btn-outline btn-success">
+                  className="btn btn-outline btn-success"
+                >
                   All Food
                 </button>
               </div>
@@ -100,37 +99,36 @@ const SwiperSlider = () => {
           <img src={pudding} />
           <div className="absolute rounded-xl flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00) 100%)]">
             <div className="text-white font-bold lg:space-y-8 w-full pl-12 space-y-8  ">
-         
-              <h1
-               data-aos="fade-up"
-              
-              className="lg:text-5xl text-4xl hover:text-blue-600">Carrot Pudding</h1>
-              
-            
-              <h1
-                data-aos="fade-up"       
+              <motion.h1
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.8 }}
+                data-aos="fade-up"
+                className="lg:text-5xl text-4xl hover:text-blue-600"
               >
-              
-                <span  className="text-secondary">Affordable</span> Price
+                Carrot Pudding
+              </motion.h1>
+
+              <h1 className="text-3xl" data-aos="fade-up">
+                <span className="text-secondary">Affordable</span> Price
               </h1>
 
               <div>
-                <button 
-                 data-aos="fade-up"
-                
-                className="btn bg-blue-600 border-none text-white lg:mr-5 mr-1">
+                <button
+                  data-aos="fade-up"
+                  className="btn bg-blue-600 border-none text-white lg:mr-5 mr-1"
+                >
                   Order Now!!
                 </button>
                 <button
                   data-aos="fade-up"
-                
-                className="btn btn-outline btn-secondary mr-1 lg:mr-5">
+                  className="btn btn-outline btn-secondary mr-1 lg:mr-5"
+                >
                   See Details
                 </button>
                 <button
                   data-aos="fade-up"
-                 
-                className="btn btn-outline btn-success">
+                  className="btn btn-outline btn-success"
+                >
                   All Food
                 </button>
               </div>
@@ -141,40 +139,36 @@ const SwiperSlider = () => {
           <img className="" src={steak} />
           <div className="absolute rounded-xl flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00) 100%)]">
             <div className="text-white font-bold lg:space-y-8 w-full pl-12 space-y-8  ">
-            
-              <h1
-             
-               data-aos="fade-up"
-             
-              className="lg:text-5xl text-4xl hover:text-blue-600">Steak</h1>
-               
-              
-
-              <h1
+              <motion.h1
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.8 }}
                 data-aos="fade-up"
-               
+                className="lg:text-5xl text-4xl hover:text-blue-600"
               >
-              
-                <span  className="text-secondary">Affordable</span> Price
+                Steak
+              </motion.h1>
+
+              <h1 className="text-3xl" data-aos="fade-up">
+                <span className="text-secondary">Affordable</span> Price
               </h1>
 
               <div>
-                <button 
-                 data-aos="fade-up"
-                
-                className="btn bg-blue-600 border-none text-white lg:mr-5 mr-1">
+                <button
+                  data-aos="fade-up"
+                  className="btn bg-blue-600 border-none text-white lg:mr-5 mr-1"
+                >
                   Order Now!!
                 </button>
                 <button
                   data-aos="fade-up"
-                 
-                className="btn btn-outline btn-secondary mr-1 lg:mr-5">
+                  className="btn btn-outline btn-secondary mr-1 lg:mr-5"
+                >
                   See Details
                 </button>
                 <button
                   data-aos="fade-up"
-                
-                className="btn btn-outline btn-success">
+                  className="btn btn-outline btn-success"
+                >
                   All Food
                 </button>
               </div>
@@ -185,36 +179,36 @@ const SwiperSlider = () => {
           <img src={salmonMeal} />
           <div className="absolute rounded-xl flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00) 100%)]">
             <div className="text-white font-bold lg:space-y-8 w-full pl-12 space-y-8  ">
-           
-              <h1
-               data-aos="fade-up"
-              
-              className="lg:text-5xl text-4xl hover:text-blue-600">Salmon Dish</h1>          
-         
-              <h1
-                data-aos="fade-up"       
+              <motion.h1
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.8 }}
+                data-aos="fade-up"
+                className="lg:text-5xl text-4xl hover:text-blue-600"
               >
-              
-                <span  className="text-secondary">Affordable</span> Price
+                Salmon Dish
+              </motion.h1>
+
+              <h1 className="text-3xl" data-aos="fade-up">
+                <span className="text-secondary">Affordable</span> Price
               </h1>
 
               <div>
-                <button 
-                 data-aos="fade-up"
-                
-                className="btn bg-blue-600 border-none text-white lg:mr-5 mr-1">
+                <button
+                  data-aos="fade-up"
+                  className="btn bg-blue-600 border-none text-white lg:mr-5 mr-1"
+                >
                   Order Now!!
                 </button>
                 <button
                   data-aos="fade-up"
-                
-                className="btn btn-outline btn-secondary mr-1 lg:mr-5">
+                  className="btn btn-outline btn-secondary mr-1 lg:mr-5"
+                >
                   See Details
                 </button>
                 <button
                   data-aos="fade-up"
-                 
-                className="btn btn-outline btn-success">
+                  className="btn btn-outline btn-success"
+                >
                   All Food
                 </button>
               </div>
@@ -225,40 +219,36 @@ const SwiperSlider = () => {
           <img className="" src={meatBall} />
           <div className="absolute rounded-xl flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00) 100%)]">
             <div className="text-white font-bold lg:space-y-8 w-full pl-12 space-y-8  ">
-            
-              <h1
-             
-               data-aos="fade-up"
-             
-              className="lg:text-5xl text-4xl hover:text-blue-600">Meat Ball</h1>
-               
-              
-
-              <h1
+              <motion.h1
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.8 }}
                 data-aos="fade-up"
-               
+                className="lg:text-5xl text-4xl hover:text-blue-600"
               >
-              
-                <span  className="text-secondary">Affordable</span> Price
+                Meat Ball
+              </motion.h1>
+
+              <h1 className="text-3xl" data-aos="fade-up">
+                <span className=" text-secondary">Affordable</span> Price
               </h1>
 
               <div>
-                <button 
-                 data-aos="fade-up"
-                
-                className="btn bg-blue-600 border-none text-white lg:mr-5 mr-1">
+                <button
+                  data-aos="fade-up"
+                  className="btn bg-blue-600 border-none text-white lg:mr-5 mr-1"
+                >
                   Order Now!!
                 </button>
                 <button
                   data-aos="fade-up"
-                 
-                className="btn btn-outline btn-secondary mr-1 lg:mr-5">
+                  className="btn btn-outline btn-secondary mr-1 lg:mr-5"
+                >
                   See Details
                 </button>
                 <button
                   data-aos="fade-up"
-                
-                className="btn btn-outline btn-success">
+                  className="btn btn-outline btn-success"
+                >
                   All Food
                 </button>
               </div>
@@ -269,36 +259,35 @@ const SwiperSlider = () => {
           <img src={pizza} />
           <div className="absolute rounded-xl flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00) 100%)]">
             <div className="text-white font-bold lg:space-y-8 w-full pl-12 space-y-8  ">
-           
-              <h1
-               data-aos="fade-up"
-              
-              className="lg:text-5xl text-4xl hover:text-blue-600">Pizza</h1>          
-         
-              <h1
-                data-aos="fade-up"       
+              <motion.h1
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.8 }}
+                data-aos="fade-up"
+                className="lg:text-5xl text-4xl hover:text-blue-600"
               >
-              
-                <span  className="text-secondary">Affordable</span> Price
+                Pizza
+              </motion.h1>
+              <h1 className="text-3xl" data-aos="fade-up">
+                <span className="text-secondary">Affordable</span> Price
               </h1>
 
               <div>
-                <button 
-                 data-aos="fade-up"
-                
-                className="btn bg-blue-600 border-none text-white lg:mr-5 mr-1">
+                <button
+                  data-aos="fade-up"
+                  className="btn bg-blue-600 border-none text-white lg:mr-5 mr-1"
+                >
                   Order Now!!
                 </button>
                 <button
                   data-aos="fade-up"
-                
-                className="btn btn-outline btn-secondary mr-1 lg:mr-5">
+                  className="btn btn-outline btn-secondary mr-1 lg:mr-5"
+                >
                   See Details
                 </button>
                 <button
                   data-aos="fade-up"
-                 
-                className="btn btn-outline btn-success">
+                  className="btn btn-outline btn-success"
+                >
                   All Food
                 </button>
               </div>
