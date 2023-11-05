@@ -57,11 +57,11 @@ const SwiperSlider = () => {
           <div className="absolute rounded-xl flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00) 100%)]">
             <div className="text-white font-bold lg:space-y-8 w-full pl-12 space-y-8  ">
             
-              <h1
-             
+              
+              <motion.h1 whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} 
                data-aos="fade-up"
              
-              className="lg:text-5xl text-4xl hover:text-blue-600">Bread Lemon</h1>
+              className="lg:text-5xl text-4xl hover:text-blue-600">Bread Lemon</motion.h1>
                
               
 
