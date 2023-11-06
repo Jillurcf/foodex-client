@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/images/FHLogo.png";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { motion } from "framer-motion";
+import AllFoodItem from "../AllFoodItem/AllFoodItem";
 
 const NavBar = () => {
   const { user, loggedOut } = useContext(AuthContext);
@@ -164,6 +165,7 @@ const NavBar = () => {
          <Link to='/signin'> <button className="btn btn-secondary">Log In</button></Link>
         </div> */}
         </div>
+       
       </div>
    
   );

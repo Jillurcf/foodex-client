@@ -46,7 +46,7 @@ const Register = () => {
         const createdAt = result.user?.metadata.creationTime;
 
         const user = { email, password, createdAt: createdAt };
-        fetch("http://localhost:5000/user", {
+        fetch("http://localhost:5000/api/v1/user", {
           method: "POST",
           headers: {
             "content-type": "application/json",
