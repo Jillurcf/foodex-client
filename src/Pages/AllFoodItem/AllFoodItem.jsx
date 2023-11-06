@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-// import useAllFood from "../../Hooks/useAllFood";
+
 import AllFoodCard from "./AllFoodCard";
 import { useEffect, useState } from "react";
 import './AllFood.css'

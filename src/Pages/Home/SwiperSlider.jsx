@@ -15,13 +15,14 @@ import pizza from "../../assets/images/sliderImage/pizza.jpg";
 import steak from "../../assets/images/sliderImage/Steak-Dinner.jpg";
 import salmonMeal from "../../assets/images/sliderImage/meal-with-salmon.jpg";
 import meatBall from "../../assets/images/sliderImage/meatBall.jpg";
-import soup from "../../assets/images/sliderImage/cabbage-soup.jpg";
 import pudding from "../../assets/images/sliderImage/Carrot-Pudding.jpg";
 import { useEffect } from "react";
 
 import { motion } from "framer-motion";
 
-const SwiperSlider = () => {
+const SwiperSlider = ({allFood}) => {
+  const {food_image} = allFood;
+  console.log(allFood);
   useEffect(() => {
     AOS.init();
     // AOS.refresh();
@@ -53,6 +54,8 @@ const SwiperSlider = () => {
       >
         <SwiperSlide className="">
           <img className="" src={BreadLemon} />
+         
+          
           
           <div className="absolute rounded-xl flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00) 100%)]">
             
