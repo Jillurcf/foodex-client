@@ -1,14 +1,16 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import Swal from "sweetalert2";
-import { AuthContext } from "../../Providers/AuthProvider";
+
 import { Helmet } from "react-helmet-async";
+import UseAuth from "../../Hooks/UseAuth";
+
 
 const SignIn = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { signinwithGoogle, signIn } = useContext(AuthContext);
+  const { signinwithGoogle, signIn } = UseAuth()
   const [userPassword, setUserPassword] = useState(null);
   const [userEmail, setUserEmail] = useState("");
 

@@ -1,13 +1,14 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
-import registerImage from "../../assets/images/Registration.jpg";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
 import Swal from "sweetalert2";
-import { AuthContext } from "../../Providers/AuthProvider";
+
 import { Helmet } from "react-helmet-async";
+import UseAuth from "../../Hooks/UseAuth";
 
 const Register = () => {
-  const { createUser, user } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { createUser, user } = UseAuth()
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -45,7 +46,7 @@ const Register = () => {
         const createdAt = result.user?.metadata.creationTime;
 
         const user = { email, password, createdAt: createdAt };
-        fetch("https://assignment10-server-sigma.vercel.app/user", {
+        fetch("http://localhost:5000/user", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -69,6 +70,7 @@ const Register = () => {
     // const user = { email, createdAt: createdAt };
 
     new Swal("Registration SuccessFull");
+    navigate(location?.state ? location.state : "/");
   };
 
   return (
