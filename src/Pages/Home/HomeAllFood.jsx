@@ -4,8 +4,7 @@ import HomeAllFoodCard from "./HomeAllFoodCard";
 
 const HomeAllFood = () => {
   const allFood = useAllFood();
-  // const [donates, setDonates] = useState([]);
-  // const [noFound, setNoFound] = useState(false);
+ 
   const [isShow, setIsShow] = useState(false);
   return (
     <div>

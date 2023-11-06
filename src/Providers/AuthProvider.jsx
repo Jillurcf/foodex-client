@@ -3,6 +3,7 @@ import app from "../firebase.config";
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, } from "firebase/auth";
 const auth = getAuth(app)
 import { GoogleAuthProvider } from "firebase/auth";
+import axios from "axios";
 
 
 const googleProvider = new GoogleAuthProvider();
@@ -31,15 +32,43 @@ const AuthProvider = ({children}) => {
       return signOut(auth)
     }
 
-    useEffect(()=>{
-        const unsubsCribe = onAuthStateChanged(auth, currentUser =>{
-            setUser(currentUser)
-            setLoading(false)
-        })
-        return ()=>{
-            unsubsCribe()
-        }
-    },[])
+    // useEffect(()=>{
+    //     const unsubsCribe = onAuthStateChanged(auth, currentUser =>{
+    //         setUser(currentUser)
+    //         setLoading(false)
+    //     })
+    //     return ()=>{
+    //         unsubsCribe()
+    //     }
+    // },[])
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+          const userEmail = currentUser?.email || user?.email;
+          const loggedUser = { email: userEmail };
+          setUser(currentUser);
+          setLoading(false);
+          console.log("current user", currentUser);
+          if (currentUser) {
+            axios.post("http://localhost:5000/api/v1/jwt", loggedUser, {
+                withCredentials: true
+              })
+              .then((res) => {
+                console.log("token response", res.data);
+              });
+          } else {
+            axios.post("http://localhost:5000/api/v1/loggedOut", loggedUser, {withCredentials: true})
+            .then(res => {
+              console.log(res.data);
+            })
+            
+          }
+        });
+        return () => {
+          return unsubscribe();
+        };
+      }, []);
+    
 
     const userInfo = {
         user,

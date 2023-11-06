@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 
 import { Helmet } from "react-helmet-async";
 import UseAuth from "../../Hooks/UseAuth";
+import axios from "axios";
 
 
 const SignIn = () => {
@@ -30,6 +31,23 @@ const SignIn = () => {
     signIn(email, password)
       .then((result) => {
         console.log(result.user);
+
+        // const user = { email };
+
+        // get acces token
+        // axios.post("https://loclahost/5000/api/v1/jwt", user, {
+        //     withCredentials: true,
+        //   })
+        //   .then((res) => {
+        //     console.log(res.data);
+        //     if (res.data.success) {
+        //       navigate(location?.state ? location?.state : "/");
+        //     }
+        //   });
+
+
+
+
         event.target.reset();
         let userEmail = result.user.email;
         setUserEmail(userEmail);
@@ -45,14 +63,7 @@ const SignIn = () => {
         console.log("error", errorCode, errorMessage);
       });
     navigate(location?.state ? location.state : "/");
-    // signIn(email, password)
-    //   .then((result) => {
-    //     console.log(result.user);
-
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+   
   };
 
   const handleGoogleSignIn = () => {

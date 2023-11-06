@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 
 import { Helmet } from "react-helmet-async";
 import UseAuth from "../../Hooks/UseAuth";
+import axios from "axios";
 
 const Register = () => {
   const location = useLocation();
@@ -32,9 +33,31 @@ const Register = () => {
         "Password should have one capital letter and one special character"
       );
     }
+
+
+// createUser(email, password)
+// .then((result) => {
+ 
+  // console.log(loggedInuser);
+  // 
+  // 
+//   })
+// })
+// .then((error) => {
+//   console.log(error);
+// });
+
+
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
+        const loggedInuser = result.user;
+        const user = {email};
+        axios.post('https://car-doctor-server61.vercel.app/jwt', user, {withCredentials: true})
+  
+      // navigate(location?.state ? location?.state : '/')
+ 
+        
 
         updateProfile(result.user, {
           displayName: name,
@@ -45,13 +68,13 @@ const Register = () => {
 
         const createdAt = result.user?.metadata.creationTime;
 
-        const user = { email, password, createdAt: createdAt };
+        const duser = { email, password, createdAt: createdAt };
         fetch("http://localhost:5000/api/v1/user", {
           method: "POST",
           headers: {
             "content-type": "application/json",
           },
-          body: JSON.stringify(user),
+          body: JSON.stringify(duser),
         })
           .then((res) => res.json())
           .then((data) => {
