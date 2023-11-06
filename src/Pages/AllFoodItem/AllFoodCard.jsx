@@ -1,6 +1,11 @@
+import { useEffect, useState } from "react";
+
 const AllFoodCard = ({ food }) => {
   const { food_image, food_name, food_category, price, quantity } = food;
-  return (
+
+
+
+  return (  
     <div className="">
        
       <div className="hero min-h-screen bg-base-200">
@@ -22,6 +27,7 @@ const AllFoodCard = ({ food }) => {
           </div>
         </div>
       </div>
+     
     </div>
   );
 };

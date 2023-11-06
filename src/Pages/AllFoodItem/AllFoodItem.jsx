@@ -1,10 +1,68 @@
 import { Helmet } from "react-helmet-async";
-import useAllFood from "../../Hooks/useAllFood";
+// import useAllFood from "../../Hooks/useAllFood";
 import AllFoodCard from "./AllFoodCard";
+import { useEffect, useState } from "react";
+import './AllFood.css'
+import UseAuth from "../../Hooks/UseAuth";
 
 const AllFoodItem = () => {
-  const allFood = useAllFood();
-  console.log(allFood);
+  // const allFood = useAllFood();
+ 
+  const [allFood, setAllFood] = useState([])
+    console.log(allFood);
+  const [currentPage, setCurrentPage] = useState(0)
+    const [itemsPerPage, setItemsPerPage] = useState(10);
+    const [count, setCount] = useState(0)
+    const {loading} = UseAuth()
+   
+    console.log(count);
+   
+    const numberOfPages = Math.ceil(count / itemsPerPage);
+
+    // instead of forEach
+    const pages = [...Array(numberOfPages).keys()]
+
+   
+    console.log(pages);
+
+   
+    useEffect(()=>{
+        fetch('http://localhost:5000/api/v1/allFoodCount')
+        .then(res => res.json())
+        .then(data => setCount(data.count))
+    },[])
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/api/v1/allFood?page=${currentPage}&size=${itemsPerPage}`)
+            .then(res => res.json())
+            .then(data => setAllFood(data))
+    }, [currentPage, itemsPerPage]);
+
+
+
+    const handleItemsPerPage = e =>{
+      
+      const val = parseInt(e.target.value)
+      setItemsPerPage(val)
+      console.log(val);
+      setCurrentPage(0);
+  }
+
+  const handlePreviousPage = ()=>{
+      if(currentPage > 0){
+          setCurrentPage(currentPage - 1);
+      }
+  }
+
+  const handleNextPage = ()=>{
+      if(currentPage < pages.length -1){
+          setCurrentPage(currentPage + 1)
+      }
+  }
+
+  if(loading){
+    return <progress className="progress w-56"></progress>
+   }
   return (
     <div className="">
       <Helmet>
@@ -22,7 +80,31 @@ const AllFoodItem = () => {
         allFood.map(food=> <AllFoodCard key={food._id} food={food}></AllFoodCard>)
       }
      </div>
-    
+     <div className="pagination">
+        <p>Current page: {currentPage}</p>
+        <button onClick={handlePreviousPage}>Prev</button>
+        {pages.map((page) => (
+          <button
+            className={currentPage === page ? "selected" : undefined}
+            onClick={() => setCurrentPage(page)}
+            key={page}
+          >
+            {page}
+          </button>
+        ))}
+        <button onClick={handleNextPage}>Next</button>
+        <select
+          value={itemsPerPage}
+          onChange={handleItemsPerPage}
+          name=""
+          id=""
+        >
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="50">50</option>
+        </select>
+      </div>
     </div>
   );
 };
