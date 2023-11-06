@@ -1,17 +1,22 @@
 import { useState } from "react";
 import useAllFood from "../../Hooks/useAllFood";
 import HomeAllFoodCard from "./HomeAllFoodCard";
+import UseAuth from "../../Hooks/UseAuth";
 
 const HomeAllFood = () => {
   const allFood = useAllFood();
  
   const [isShow, setIsShow] = useState(false);
+  const {isLoading} = UseAuth();
+  if(isLoading){
+    return <progress className="progress w-56"></progress>
+  }
   return (
     <div>
       {/* <h1 className='text-6xl font-bold text-blue-600 text-center'>All Food</h1> */}
       <div className="bg-blue-900 h-[300px] w-full">
         <h1 className="text-center md:text-6xl text-2xl font-bold text-white pt-36 ">
-          All Food Items
+         Top Food Section
         </h1>
         <p className="text-center text-white py-2">
           Good food is more than just sustenance; it is a source of pleasure,
@@ -31,35 +36,11 @@ const HomeAllFood = () => {
               ))}
       </div>
       {
-        allFood.length > 6 && <button onClick={()=>setIsShow(!isShow)} className="bg-[#009444] text-white btn mx-auto flex justify-center m-4">
-          {isShow ? "Show less" : "Show All"}
+        allFood.length > 6 && <button  onClick={()=>setIsShow(!isShow)} className=" bg-[#009444] text-white btn mx-auto flex justify-center m-4">
+          {isShow ? "See Less" : "See All Food"}
         </button>
       }
-      {/* {
-        noFound ? <div className="max-w-screen-2xl mx-auto h-[100vh] items-center "><p className="mx-auto text-2xl font-bold flex justify-center items-center mt-96">{noFound}</p></div> 
-        :
-        <div className=" max-w-screen-2xl mx-auto mt-12">
-        <div className="grid gap-8 grid-cols-1 md:grid-cols-2 mx-auto">
-          {isShow
-            ? donates.map((donate) => (
-                <DonationCards key={donate.id} donate={donate}></DonationCards>
-              ))
-            : donates
-                .slice(0, 4)
-                .map((donate) => (
-                  <DonationCards
-                    key={donate.id}
-                    donate={donate}
-                  ></DonationCards>
-                ))}
-        </div>
-        {donates.length > 4 && (
-        <button onClick={() => setIsShow(!isShow)} className="bg-[#009444] text-white btn mx-auto flex justify-center m-4">
-          {isShow ? "Show less" : "Show All"}
-        </button>
-      )}
-      </div>
-      } */}
+      
     </div>
   );
 };
