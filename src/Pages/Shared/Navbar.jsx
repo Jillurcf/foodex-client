@@ -130,7 +130,7 @@ const NavBar = () => {
                   </li>
                   <li>
                     <button className="btn btn-sm btn-ghost">
-                     My Added Food Item
+                     <Link to='/addFood'>My Added Food Item</Link>
                     </button>
                   </li>
                   <li>
@@ -140,7 +140,7 @@ const NavBar = () => {
                   </li>
                   <li>
                     <button className="text-center btn btn-sm btn-ghost">
-                     My Ordered Food items
+                     <Link to="/orderdFood">My Ordered Food items</Link>
                     </button>
                   </li>
                   <li>

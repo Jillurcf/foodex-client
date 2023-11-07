@@ -1,4 +1,4 @@
-import axios from "axios";
+
 import UseAuth from "../../Hooks/UseAuth";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
@@ -43,7 +43,9 @@ const Purchase = () => {
       
     </div>
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl ">
+   
       <form onSubmit={handlePurchase} className=" mt-36 card-body">
+      <h1 className="text-2xl font-bold">Please Purchase here</h1>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Food Name</span>
