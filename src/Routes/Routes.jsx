@@ -8,6 +8,8 @@ import AllFoodItem from "../Pages/AllFoodItem/AllFoodItem";
 import Blog from "../Pages/Blog/Blog";
 import SignIn from "../Pages/SignIn/SignIn";
 import Register from "../Pages/Register/Register";
+import SeeDetail from "../Pages/AllFoodItem/SeeDetail";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +28,12 @@ const router = createBrowserRouter([
         {
           path: 'blog',
           element: <Blog></Blog>
+        },
+        {
+          path: 'seeDetail/:id',
+          element: <SeeDetail></SeeDetail>,
+          loader: ({params})=> fetch(`http://localhost:5000/api/v1/allFood/${params.id}`)
+
         }
 
     ]

@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+
+import { Link } from "react-router-dom";
 
 const AllFoodCard = ({ food }) => {
-  const { food_image, food_name, food_category, price, quantity } = food;
+  const {_id, food_image, food_name, food_category, price, quantity } = food;
 
-  return (
+   return (
     <div className="">
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row">
@@ -21,8 +22,10 @@ const AllFoodCard = ({ food }) => {
                 Quantity: {quantity}
               </button>
             </div>
-            <button className="mt-12 btn btn-outline btn-secondary font-bold mx-auto flex w-full">
-              See Details
+            <button 
+          
+            className="mt-12 btn btn-outline btn-secondary font-bold mx-auto flex w-full">
+             <Link to={`/seeDetail/${_id}`}> See Details</Link>
             </button>
           </div>
         </div>
