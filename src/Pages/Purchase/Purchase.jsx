@@ -1,6 +1,7 @@
 import axios from "axios";
 import UseAuth from "../../Hooks/UseAuth";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const Purchase = () => {
     const {user} = UseAuth()
@@ -22,18 +23,13 @@ const Purchase = () => {
         console.log(res.data);
         Swal.fire('Purchase successfull')
         
-       })
-
-      //  fetch('http://localhost:5173/api/v1/purchase', {
-      //     method: "POST",
-      //     headers: {
-      //       "content-type": "application/json",
-      //     },
-      //     body: JSON.stringify(purchase)
-      //   })
+       })    
     }
   return (
     <div>
+      <Helmet>
+            <title>FoodHero | Purchase</title>
+            </Helmet>
    <div className="hero min-h-screen" style={{backgroundImage: 'url(https://i.ibb.co/YBcMKnH/purchase.jpg)'}}>
   <div className="hero-overlay bg-opacity-60"></div>
   <div className="hero-content text-center text-neutral-content">
