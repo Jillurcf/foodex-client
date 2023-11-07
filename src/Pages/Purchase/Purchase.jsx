@@ -2,10 +2,12 @@ import axios from "axios";
 import UseAuth from "../../Hooks/UseAuth";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 const Purchase = () => {
     const {user} = UseAuth()
     console.log(user.email);
+    const axiosSecure = useAxiosSecure();
     const handlePurchase = e =>{
         e.preventDefault()
         const form = e.target;
@@ -18,7 +20,7 @@ const Purchase = () => {
         const purchase = {foodName, price, quantity, name, email, buyingDate}
         console.log(purchase);
         
-        axios.post('https://assignment11-server-side-chi.vercel.app/api/v1/purchase', purchase, {withCredentials: true})
+        axiosSecure.post('https://assignment11-server-side-chi.vercel.app/api/v1/purchase', purchase, {withCredentials: true})
        .then(res => {
         console.log(res.data);
         Swal.fire('Purchase successfull')
@@ -40,8 +42,8 @@ const Purchase = () => {
     <div className="text-center lg:text-left">
       
     </div>
-    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-      <form onSubmit={handlePurchase} className="card-body">
+    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl ">
+      <form onSubmit={handlePurchase} className=" mt-36 card-body">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Food Name</span>

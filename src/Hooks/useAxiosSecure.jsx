@@ -10,22 +10,38 @@ const axiosSecure = axios.create({
 })
 
 const useAxiosSecure = () => {
-    const {logout} = UseAuth()
+    const {loggedOut} = UseAuth()
     const navigate = useNavigate()
     useEffect(()=>{
+
         axiosSecure.interceptors.response.use(res => {
             return res;
-        }, error =>  {
-            console.log('error tracked in the interceptor', error.response);
-            if(error.response.status === 401 || error.response.status === 403 ){
-                console.log('logout the user');
-                logout()
-                .then(()=>{
-                    navigate('/login')
-                })
-                .catch(error = console.log(error))
+        }, error => {
+            console.log('error tracked in the interceptor', error.response)
+            if (error.response.status === 401 || error.response.status === 403) {
+                console.log('logout the user')
+                loggedOut()
+                    .then(() => { 
+                        navigate('/login')
+                    })
+                    .catch(error => console.log(error))
             }
-        })
+})
+
+
+        // axiosSecure.interceptors.response.use(res => {
+        //     return res;
+        // }, error =>  {
+        //     console.log('error tracked in the interceptor', error.response);
+        //     if(error.response.status === 401 || error.response.status === 403 ){
+        //         console.log('logout the user');
+        //         logout()
+        //         .then(()=>{
+        //             navigate('/login')
+        //         })
+        //         .catch(error = console.log(error))
+        //     }
+        // })
     },[])
 
    return axiosSecure;

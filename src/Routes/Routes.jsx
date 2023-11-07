@@ -11,6 +11,7 @@ import Register from "../Pages/Register/Register";
 import SeeDetail from "../Pages/AllFoodItem/SeeDetail";
 import PrivateRoute from "./PrivateRoute";
 import Purchase from "../Pages/Purchase/Purchase";
+import AddFood from "../Pages/AddFood/AddFood";
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,15 @@ const router = createBrowserRouter([
         {
           path: 'purchasePage',
           element: <PrivateRoute><Purchase></Purchase></PrivateRoute>,
-        }
+          
+        },
+        {
+          path: 'addFood',
+          element: <AddFood></AddFood>,
+          
+         
+        },
+        
         
 
     ]
@@ -51,6 +60,7 @@ const router = createBrowserRouter([
   {
     path: 'register',
     element: <Register></Register>
-  }
+  },
+  
 ]);
 export default router;

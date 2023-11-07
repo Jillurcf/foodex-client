@@ -135,7 +135,7 @@ const NavBar = () => {
                   </li>
                   <li>
                     <button className="btn btn-sm btn-ghost">
-                     Add a Food Item
+                    <Link to="/addFood"> Add a Food Item</Link>
                     </button>
                   </li>
                   <li>
@@ -161,9 +161,7 @@ const NavBar = () => {
               </Link>
             )}
           </div>
-          {/* <div className="navbar-end md:mx-12">
-         <Link to='/signin'> <button className="btn btn-secondary">Log In</button></Link>
-        </div> */}
+        
         </div>
        
       </div>
