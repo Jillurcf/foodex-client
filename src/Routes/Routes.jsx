@@ -10,6 +10,7 @@ import SignIn from "../Pages/SignIn/SignIn";
 import Register from "../Pages/Register/Register";
 import SeeDetail from "../Pages/AllFoodItem/SeeDetail";
 import PrivateRoute from "./PrivateRoute";
+import Purchase from "../Pages/Purchase/Purchase";
 
 const router = createBrowserRouter([
   {
@@ -32,9 +33,14 @@ const router = createBrowserRouter([
         {
           path: 'seeDetail/:id',
           element: <SeeDetail></SeeDetail>,
-          loader: ({params})=> fetch(`http://localhost:5000/api/v1/allFood/${params.id}`)
+          loader: ({params})=> fetch(`https://assignment11-server-side-chi.vercel.app/api/v1/allFood/${params.id}`)
 
+        },
+        {
+          path: 'purchasePage',
+          element: <PrivateRoute><Purchase></Purchase></PrivateRoute>,
         }
+        
 
     ]
   },

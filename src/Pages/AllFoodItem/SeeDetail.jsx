@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const SeeDetail = () => {
   const seeDetails = useLoaderData();
@@ -13,14 +13,30 @@ const SeeDetail = () => {
             alt="car!"
           />
         </figure>
-        <div className="card-body">
-          <h2 className="card-title">Life hack</h2>
-          <p>How to park your car at your garage?</p>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Learn now!</button>
-          </div>
+       <div className="flex justify-evenly">
+       <div className="card-body">
+          <h2 className="card-title">{seeDetails.food_name}</h2>
+          <p>{seeDetails.food_category}</p>
+          <p>Price: ${seeDetails.price}</p>        
         </div>
+       <div className="card-body">
+          
+          <p> Added By: {seeDetails.added_by}</p>
+          <p>Origin: {seeDetails.food_origin_country}</p>        
+        </div>         
+       </div>
+       <div className="card-body">
+          <p className="text-center">{seeDetails.description}</p>             
+        </div>
+        <div className="absolute top-[50%] left-[50%] card-actions justify-center">
+            <button className="btn btn-secondary  w-96">Order now!</button>
+          </div>
+        <div className="mb-6 card-actions justify-center">
+            <button className="btn btn-secondary"><Link to='/purchasePage'>Order now!</Link></button>
+          </div>
+         
       </div>
+     
     </div>
   );
 };

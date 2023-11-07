@@ -19,6 +19,7 @@ import pudding from "../../assets/images/sliderImage/Carrot-Pudding.jpg";
 import { useEffect } from "react";
 
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const SwiperSlider = ({allFood}) => {
   const {food_image} = allFood;
@@ -80,19 +81,21 @@ const SwiperSlider = ({allFood}) => {
                   data-aos="fade-up"
                   className="btn bg-blue-600 border-none text-white lg:mr-5 mr-1"
                 >
-                  Order Now!!
+                 <Link to="/allFoodItems"> Order Now!!</Link>
                 </button>
                 <button
                   data-aos="fade-up"
                   className="btn btn-outline btn-secondary mr-1 lg:mr-5"
                 >
-                  See Details
+                  <Link to="/allFoodItems">See Details</Link>
+                  
                 </button>
                 <button
                   data-aos="fade-up"
                   className="btn btn-outline btn-success"
                 >
-                  All Food
+                  <Link to="/allFoodItems">All Food</Link>
+                  
                 </button>
               </div>
             </div>
@@ -120,19 +123,21 @@ const SwiperSlider = ({allFood}) => {
                   data-aos="fade-up"
                   className="btn bg-blue-600 border-none text-white lg:mr-5 mr-1"
                 >
-                  Order Now!!
+                 <Link to="/allFoodItems"> Order Now!!</Link>
                 </button>
                 <button
                   data-aos="fade-up"
                   className="btn btn-outline btn-secondary mr-1 lg:mr-5"
                 >
-                  See Details
+                  <Link to="/allFoodItems">See Details</Link>
+                  
                 </button>
                 <button
                   data-aos="fade-up"
                   className="btn btn-outline btn-success"
                 >
-                  All Food
+                  <Link to="/allFoodItems">All Food</Link>
+                  
                 </button>
               </div>
             </div>
@@ -155,24 +160,26 @@ const SwiperSlider = ({allFood}) => {
                 <span className="text-secondary">Affordable</span> Price
               </h1>
 
-              <div>
+            <div>
                 <button
                   data-aos="fade-up"
                   className="btn bg-blue-600 border-none text-white lg:mr-5 mr-1"
                 >
-                  Order Now!!
+                 <Link to="/allFoodItems"> Order Now!!</Link>
                 </button>
                 <button
                   data-aos="fade-up"
                   className="btn btn-outline btn-secondary mr-1 lg:mr-5"
                 >
-                  See Details
+                  <Link to="/allFoodItems">See Details</Link>
+                  
                 </button>
                 <button
                   data-aos="fade-up"
                   className="btn btn-outline btn-success"
                 >
-                  All Food
+                  <Link to="/allFoodItems">All Food</Link>
+                  
                 </button>
               </div>
             </div>
@@ -200,19 +207,21 @@ const SwiperSlider = ({allFood}) => {
                   data-aos="fade-up"
                   className="btn bg-blue-600 border-none text-white lg:mr-5 mr-1"
                 >
-                  Order Now!!
+                 <Link to="/allFoodItems"> Order Now!!</Link>
                 </button>
                 <button
                   data-aos="fade-up"
                   className="btn btn-outline btn-secondary mr-1 lg:mr-5"
                 >
-                  See Details
+                  <Link to="/allFoodItems">See Details</Link>
+                  
                 </button>
                 <button
                   data-aos="fade-up"
                   className="btn btn-outline btn-success"
                 >
-                  All Food
+                  <Link to="/allFoodItems">All Food</Link>
+                  
                 </button>
               </div>
             </div>
@@ -240,19 +249,21 @@ const SwiperSlider = ({allFood}) => {
                   data-aos="fade-up"
                   className="btn bg-blue-600 border-none text-white lg:mr-5 mr-1"
                 >
-                  Order Now!!
+                 <Link to="/allFoodItems"> Order Now!!</Link>
                 </button>
                 <button
                   data-aos="fade-up"
                   className="btn btn-outline btn-secondary mr-1 lg:mr-5"
                 >
-                  See Details
+                  <Link to="/allFoodItems">See Details</Link>
+                  
                 </button>
                 <button
                   data-aos="fade-up"
                   className="btn btn-outline btn-success"
                 >
-                  All Food
+                  <Link to="/allFoodItems">All Food</Link>
+                  
                 </button>
               </div>
             </div>
@@ -279,19 +290,21 @@ const SwiperSlider = ({allFood}) => {
                   data-aos="fade-up"
                   className="btn bg-blue-600 border-none text-white lg:mr-5 mr-1"
                 >
-                  Order Now!!
+                 <Link to="/allFoodItems"> Order Now!!</Link>
                 </button>
                 <button
                   data-aos="fade-up"
                   className="btn btn-outline btn-secondary mr-1 lg:mr-5"
                 >
-                  See Details
+                  <Link to="/allFoodItems">See Details</Link>
+                  
                 </button>
                 <button
                   data-aos="fade-up"
                   className="btn btn-outline btn-success"
                 >
-                  All Food
+                  <Link to="/allFoodItems">All Food</Link>
+                  
                 </button>
               </div>
             </div>
