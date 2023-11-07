@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import UseAuth from "../../Hooks/UseAuth";
+import { Helmet } from "react-helmet-async";
 // import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 const OrderedFood = () => {
@@ -20,7 +21,7 @@ const OrderedFood = () => {
   useEffect(() => {
     if (user) {
       // console.log(email);
-      fetch(`http://localhost:5000/api/v1/purchase/food/${user?.email}`)
+      fetch(`https://assignment11-server-side-chi.vercel.app/api/v1/purchase/food/${user?.email}`)
         .then((res) => res.json())
         .then((data) => setOrderedFood(data));
     }
@@ -28,6 +29,9 @@ const OrderedFood = () => {
 
   return (
     <div>
+        <Helmet>
+        <title>FoodHero | My Order</title>
+      </Helmet>
       <div
         className="hero min-h-screen"
         style={{
@@ -51,6 +55,7 @@ const OrderedFood = () => {
                       </label>
                     </th>
                 
+                    <th>Food Image</th>
                     <th>Food Name</th>
                     <th>Price</th>
                     <th>Added Time</th>
@@ -68,27 +73,24 @@ const OrderedFood = () => {
                       </label>
                     </th>
                     <td>
-                      {/* <div className="flex items-center space-x-3">
+                      <div className="flex items-center space-x-3">
                         <div className="avatar">
                           <div className="mask mask-squircle w-12 h-12">
                             <img
-                              src={food.food_image}
+                              src={food.foodImage}
                               alt="Avatar Tailwind CSS Component"
                             />
                           </div>
                         </div>
-                        <div>
-                          <div className="font-bold">Hart Hagerty</div>
-                          <div className="text-sm opacity-50">
-                            United States
-                          </div>
-                        </div>
-                      </div> */}
-                      {food.foodName}
+                        
+                      </div>
+                     
                     </td>
                     <td>
-                     {food.price}
+                    {food.foodName}
+                    
                     </td>
+                    <td> ${food.price}</td>
                     <td>{user?.metadata.lastSignInTime}</td>
                     <th>
                       <button className="btn btn-ghost btn-xs">{user?.displayName}</button>

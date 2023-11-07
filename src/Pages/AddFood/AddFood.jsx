@@ -3,11 +3,16 @@ import UseAuth from "../../Hooks/UseAuth";
 import Swal from "sweetalert2";
 // import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useLoaderData } from "react-router-dom";
 
 const AddFood = () => {
   const { user } = UseAuth();
   const [addedFood, setaddedFood] = useState([]);
+  
   console.log(user);
+  const allFodd = useLoaderData([])
+  const [allFodds, setAllFoods] = useState(allFodd)
+  console.log(allFodds);
   //   const addedFood = useLoaderData()
   // console.log(addedFood);
   // const {email }= useParams()
@@ -57,6 +62,51 @@ const AddFood = () => {
     Swal.fire("Food Added");
   };
 
+
+  const handleDelete = id =>{
+   Swal.fire('are you sure you want to delete?')
+    // Swal.fire('are you sure you want to delete?')
+    // if(proceed){
+       
+    fetch(`https://assignment11-server-side-chi.vercel.app/api/v1/allFood/${id}`, {
+            method: 'DELETE'
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data.deletedCount > 0){
+                Swal.fire('successfull')
+                const remaining = allFodds.filter(food => food._id !== id)
+                setAllFoods(remaining)
+            }
+        })
+    // }
+}
+
+const handleUpdate = id =>{
+    fetch(`https://assignment11-server-side-chi.vercel.app/api/v1/allFood/${id}`, {
+        method: "PATCH",
+        headers: {
+            'content-type' : 'application/json'
+        },
+        body: JSON.stringify({status: 'confirm'})
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+        if(data.modifiedCount > 0){
+            // update state
+            const remainig = addedFood.filter(food => food._id !== id);
+            const updated = addedFood.find(food=> food._id === id);
+            updated.status= 'confirm'
+            const newFood =[updated, ...remainig];
+            setaddedFood(newFood)
+        }
+    })
+}
+
+
+
   return (
     <div>
       <div
@@ -71,68 +121,65 @@ const AddFood = () => {
             <div className="hero min-h-screen ">
               <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
-                    <h1>Food Added By: {user?.displayName}</h1>
-                    
+                  <h1>Food Added By: {user?.displayName}</h1>
+
                   {/* add food */}
-                 {
-                    addedFood.map(adFood => 
-                        <div key={adFood._Id} className="overflow-x-auto">
-                        <table className="table">
-                           
-                          {/* head */}
-                          <thead>
-                            <tr>
-                              <th>
-                                <label>
-                                  <input type="checkbox" className="checkbox" />
-                                </label>
-                              </th>
-                              <th>Food Image</th>
-                              <th>Food Name & Origin</th>
-                              <th>Price</th>
-                             
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {/* row 1 */}
-                            <tr>
-                              <th>
-                                <label>
-                                  <input type="checkbox" className="checkbox" />
-                                </label>
-                              </th>
-                              <td>
-                                <div className="flex items-center space-x-3">
-                                  <div className="avatar">
-                                    <div className="mask mask-squircle w-12 h-12">
-                                      <img
-                                        src={adFood.food_image}
-                                        alt="Avatar Tailwind CSS Component"
-                                      />
-                                    </div>
-                                  </div>
-                                  <div>
-                                    
+                  {addedFood.map((adFood) => (
+                    <div key={adFood._Id} className="overflow-x-auto">
+                      <table className="table">
+                        {/* head */}
+                        <thead>
+                          <tr>
+                            <th>
+                              <label>
+                                <input type="checkbox" className="checkbox" />
+                              </label>
+                            </th>
+                            <th>Food Image</th>
+                            <th>Food Name & Origin</th>
+                            <th>Price</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {/* row 1 */}
+                          <tr>
+                            <th>
+                              <label>
+                                <input type="checkbox" className="checkbox" />
+                              </label>
+                            </th>
+                            <td>
+                              <div className="flex items-center space-x-3">
+                                <div className="avatar">
+                                  <div className="mask mask-squircle w-12 h-12">
+                                    <img
+                                      src={adFood.food_image}
+                                      alt="Avatar Tailwind CSS Component"
+                                    />
                                   </div>
                                 </div>
-                              </td>
-                              <td>
+                                <div></div>
+                              </div>
+                            </td>
+                            <td>
                               {adFood.food_name} <br />
-                             Origin: {adFood.origin}
-                              
-                              </td>
-                              <td>
-                              Price: ${adFood.price}
-                              
-                              </td>
-                              
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                        
-                        )
-                 }
+                              Origin: {adFood.origin}
+                            </td>
+                            <td>Price: ${adFood.price}</td>
+                            <td>
+                              <div className="btn-group btn-group-vertical lg:btn-group-horizontal">
+                                <button onClick={()=> handleUpdate(adFood._id)} className="btn btn-active">
+                                 Update
+                                </button>
+                                <button onClick={()=> handleDelete(adFood._id)} className="btn">X</button>
+                               
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  ))}
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl ">
                   <form onSubmit={handleAddFood} className=" mt-36 card-body">

@@ -3,21 +3,25 @@ import UseAuth from "../../Hooks/UseAuth";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
+import { useLoaderData } from "react-router-dom";
 
 const Purchase = () => {
+  const seeDetails = useLoaderData();
+ console.log(seeDetails._id);
     const {user} = UseAuth()
-    console.log(user.email);
+    // console.log(user.email);
     const axiosSecure = useAxiosSecure();
     const handlePurchase = e =>{
         e.preventDefault()
         const form = e.target;
         const foodName = form.foodName.value;
+        const foodImage = form.foodImage.value;
         const price = form.price.value;
         const quantity = form.quantity.value;
         const name = user.displayName
         const email = user.email;
         const buyingDate = form.buyingDate.value;
-        const purchase = {foodName, price, quantity, name, email, buyingDate}
+        const purchase = {foodName, foodImage, price, quantity, name, email, buyingDate}
         console.log(purchase);
         
         axiosSecure.post('https://assignment11-server-side-chi.vercel.app/api/v1/purchase', purchase, {withCredentials: true})
@@ -50,13 +54,19 @@ const Purchase = () => {
           <label className="label">
             <span className="label-text">Food Name</span>
           </label>
-          <input type="text"  name="foodName" className="input input-bordered" required />
+          <input type="text" defaultValue={seeDetails.food_name} name="foodName" className="input input-bordered" required />
+        </div>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Food Image</span>
+          </label>
+          <input type="text" defaultValue={seeDetails.food_image} name="foodImage" className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Price</span>
           </label>
-          <input type="text" name="price" className="input input-bordered" required />
+          <input type="text" name="price" defaultValue={seeDetails.price} className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
@@ -68,13 +78,13 @@ const Purchase = () => {
           <label className="label">
             <span className="label-text">Buyer Name</span>
           </label>
-          <input type="text" defaultValue={user.displayName} placeholder="" className="input input-bordered" required />
+          <input type="text" defaultValue={user?.displayName} placeholder="" className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Buyer Email</span>
           </label>
-          <input type="email" defaultValue={user.email} placeholder="" className="input input-bordered" required />
+          <input type="email" defaultValue={user?.email} placeholder="" className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">

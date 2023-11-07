@@ -39,13 +39,15 @@ const router = createBrowserRouter([
 
         },
         {
-          path: 'purchasePage',
+          path: 'purchasePage/:id',
           element: <PrivateRoute><Purchase></Purchase></PrivateRoute>,
+          loader: ({params})=> fetch(`https://assignment11-server-side-chi.vercel.app/api/v1/allFood/${params.id}`)
           
         },
         {
           path: 'addFood',
           element: <AddFood></AddFood>,
+          loader: ()=> fetch('http://localhost:5000/api/v1/allFood')
         },
         {
           path: 'orderdFood',
