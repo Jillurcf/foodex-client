@@ -13,6 +13,7 @@ import PrivateRoute from "./PrivateRoute";
 import Purchase from "../Pages/Purchase/Purchase";
 import AddFood from "../Pages/AddFood/AddFood";
 import OrderedFood from "../Pages/OrcderedFood/OrderedFood";
+import UpdateFood from "../Pages/UpdateFood/UpdateFood";
 
 const router = createBrowserRouter([
   {
@@ -47,7 +48,12 @@ const router = createBrowserRouter([
         {
           path: 'addFood',
           element: <AddFood></AddFood>,
-          loader: ()=> fetch('http://localhost:5000/api/v1/allFood')
+          loader: ()=> fetch('https://assignment11-server-side-chi.vercel.app/api/v1/allFood')
+        },
+        {
+          path: 'updateFood',
+          element: <UpdateFood></UpdateFood>
+          
         },
         {
           path: 'orderdFood',

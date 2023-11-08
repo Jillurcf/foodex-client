@@ -3,7 +3,8 @@ import UseAuth from "../../Hooks/UseAuth";
 import Swal from "sweetalert2";
 // import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
+
 
 const AddFood = () => {
   const { user } = UseAuth();
@@ -60,6 +61,7 @@ const AddFood = () => {
       { withCredentials: true }
     );
     Swal.fire("Food Added");
+    window.reload()
   };
 
 
@@ -83,27 +85,6 @@ const AddFood = () => {
     // }
 }
 
-const handleUpdate = id =>{
-    fetch(`https://assignment11-server-side-chi.vercel.app/api/v1/allFood/${id}`, {
-        method: "PATCH",
-        headers: {
-            'content-type' : 'application/json'
-        },
-        body: JSON.stringify({status: 'confirm'})
-    })
-    .then(res => res.json())
-    .then(data => {
-        console.log(data);
-        if(data.modifiedCount > 0){
-            // update state
-            const remainig = addedFood.filter(food => food._id !== id);
-            const updated = addedFood.find(food=> food._id === id);
-            updated.status= 'confirm'
-            const newFood =[updated, ...remainig];
-            setaddedFood(newFood)
-        }
-    })
-}
 
 
 
@@ -168,8 +149,8 @@ const handleUpdate = id =>{
                             <td>Price: ${adFood.price}</td>
                             <td>
                               <div className="btn-group btn-group-vertical lg:btn-group-horizontal">
-                                <button onClick={()=> handleUpdate(adFood._id)} className="btn btn-active">
-                                 Update
+                                <button  className="btn btn-active">
+                                <Link to="/updateFood"> Update</Link>
                                 </button>
                                 <button onClick={()=> handleDelete(adFood._id)} className="btn">X</button>
                                
