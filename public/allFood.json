@@ -5,6 +5,7 @@
       "food_category": "Pizza",
       "quantity": 5,
       "price": 5,
+      "count": 0,
       "added_by": "Chef Mario",
       "food_origin_country": "Italy",
       "description": "A classic Italian pizza topped with fresh tomatoes, mozzarella cheese, basil, and a drizzle of olive oil. Baked to perfection in a wood-fired oven."
@@ -15,6 +16,7 @@
       "food_category": "Japanese",
       "quantity": 10,
       "price": 18,
+      "count": 0,
       "added_by": "Sushi Chef Kenji",
       "food_origin_country": "Japan",
       "description": "An exquisite assortment of sushi, including nigiri, sashimi, and maki rolls. Made with the freshest seafood and served with soy sauce and wasabi."
@@ -25,6 +27,7 @@
       "food_category": "Turkey",
       "quantity": 4,
       "price": 14,
+      "count": 0,
       "added_by": "Chef Priya",
       "food_origin_country": "Turkey",
       "description": "Tender pieces of marinated chicken cooked in a creamy tomato sauce with a blend of aromatic spices. Served with naan bread or rice."
@@ -35,6 +38,7 @@
       "food_category": "Germany",
       "quantity": 10,
       "price": 9,
+      "count": 0,
       "added_by": "Chef Carlos",
       "food_origin_country": "Germany",
       "description": "Soft tortillas filled with seasoned ground beef, lettuce, tomatoes, cheese, sour cream, and a dash of hot sauce for a spicy kick."
@@ -45,6 +49,7 @@
       "food_category": "Pudding",
       "quantity": 10,
       "price": 8,
+      "count": 0,
       "added_by": "Chef Elena",
       "food_origin_country": "China",
       "description": "A refreshing salad with a mix of crisp cucumbers, ripe tomatoes, Kalamata olives, red onions, and feta cheese. Drizzled with olive oil and oregano."
@@ -55,6 +60,7 @@
       "food_category": "Japanese",
       "quantity": 5,
       "price": 5,
+      "count": 0,
       "added_by": "Chef Hiroshi",
       "food_origin_country": "Japan",
       "description": "Succulent slices of beef marinated in a sweet and savory teriyaki sauce, grilled to perfection, and served with steamed rice and vegetables."
@@ -65,6 +71,7 @@
       "food_category": "American",
       "quantity": 2,
       "price": 7,
+      "count": 0,
       "added_by": "Chef Mike",
       "food_origin_country": "USA",
       "description": "A classic cheeseburger featuring a juicy beef patty, melted cheese, lettuce, tomato, pickles, and a special house-made sauce."
@@ -75,6 +82,7 @@
       "food_category": "Italian",
       "quantity": "1 serving",
       "price": 11.99,
+      "count": 0,
       "added_by": "Chef Isabella",
       "food_origin_country": "Italy",
       "description": "Al dente spaghetti served with a rich and savory Bolognese sauce made from ground beef, tomatoes, and herbs, topped with Parmesan cheese."
@@ -85,6 +93,7 @@
       "food_category": "Thai",
       "quantity": 5,
       "price": 15,
+      "count": 0,
       "added_by": "Chef Nong",
       "food_origin_country": "Thailand",
       "description": "A flavorful Thai stir-fried noodle dish with shrimp, tofu, bean sprouts, and peanuts in a tamarind-based sauce, garnished with lime and cilantro."
@@ -95,6 +104,7 @@
       "food_category": "Italian",
       "quantity": "1 slice",
       "price": 6.99,
+      "count": 0,
       "added_by": "Chef Luigi",
       "food_origin_country": "Italy",
       "description": "A classic Italian dessert made with layers of coffee-soaked ladyfingers and mascarpone cheese, dusted with cocoa powder."
@@ -105,6 +115,7 @@
       "food_category": "Chinese",
       "quantity": 6,
       "price": 12,
+      "count": 0,
       "added_by": "Chef Li",
       "food_origin_country": "China",
       "description": "Crispy battered chicken pieces tossed in a sweet and tangy sesame sauce, sprinkled with sesame seeds, and served with steamed rice."
@@ -115,6 +126,7 @@
       "food_category": "India",
       "quantity": 20,
       "price": 9,
+      "count": 0,
       "added_by": "Chef Sofia",
       "food_origin_country": "Italy",
       "description": "A simple and delicious salad with ripe tomatoes, fresh mozzarella, basil leaves, drizzled with balsamic glaze and olive oil."
@@ -125,6 +137,7 @@
       "food_category": "India",
       "quantity": 20,
       "price": 9,
+      "count": 0,
       "added_by": "Chef Sofia",
       "food_origin_country": "Italy",
       "description": "A simple and delicious salad with ripe tomatoes, fresh mozzarella, basil leaves, drizzled with balsamic glaze and olive oil."
@@ -135,6 +148,7 @@
       "food_category": "India",
       "quantity": 20,
       "price": 9,
+      "count": 0,
       "added_by": "Chef Sofia",
       "food_origin_country": "Italy",
       "description": "A simple and delicious salad with ripe tomatoes, fresh mozzarella, basil leaves, drizzled with balsamic glaze and olive oil."
@@ -145,6 +159,7 @@
       "food_category": "India",
       "quantity": 20,
       "price": 9,
+      "count": 0,
       "added_by": "Chef Sofia",
       "food_origin_country": "Italy",
       "description": "A simple and delicious salad with ripe tomatoes, fresh mozzarella, basil leaves, drizzled with balsamic glaze and olive oil."
@@ -155,6 +170,7 @@
       "food_category": "India",
       "quantity": 20,
       "price": 9,
+      "count": 0,
       "added_by": "Chef Sofia",
       "food_origin_country": "Italy",
       "description": "A simple and delicious salad with ripe tomatoes, fresh mozzarella, basil leaves, drizzled with balsamic glaze and olive oil."
@@ -165,6 +181,7 @@
       "food_category": "India",
       "quantity": 20,
       "price": 9,
+      "count": 0,
       "added_by": "Chef Sofia",
       "food_origin_country": "Italy",
       "description": "A simple and delicious salad with ripe tomatoes, fresh mozzarella, basil leaves, drizzled with balsamic glaze and olive oil."
@@ -175,6 +192,7 @@
       "food_category": "India",
       "quantity": 20,
       "price": 9,
+      "count": 0,
       "added_by": "Chef Sofia",
       "food_origin_country": "Italy",
       "description": "A simple and delicious salad with ripe tomatoes, fresh mozzarella, basil leaves, drizzled with balsamic glaze and olive oil."
@@ -185,6 +203,7 @@
       "food_category": "India",
       "quantity": 20,
       "price": 9,
+      "count": 0,
       "added_by": "Chef Sofia",
       "food_origin_country": "Italy",
       "description": "A simple and delicious salad with ripe tomatoes, fresh mozzarella, basil leaves, drizzled with balsamic glaze and olive oil."
@@ -195,6 +214,7 @@
       "food_category": "India",
       "quantity": 20,
       "price": 9,
+      "count": 0,
       "added_by": "Chef Sofia",
       "food_origin_country": "Italy",
       "description": "A simple and delicious salad with ripe tomatoes, fresh mozzarella, basil leaves, drizzled with balsamic glaze and olive oil."
@@ -205,6 +225,7 @@
       "food_category": "India",
       "quantity": 20,
       "price": 9,
+      "count": 0,
       "added_by": "Chef Sofia",
       "food_origin_country": "Italy",
       "description": "A simple and delicious salad with ripe tomatoes, fresh mozzarella, basil leaves, drizzled with balsamic glaze and olive oil."
@@ -215,6 +236,7 @@
       "food_category": "India",
       "quantity": 20,
       "price": 9,
+      "count": 0,
       "added_by": "Chef Sofia",
       "food_origin_country": "Italy",
       "description": "A simple and delicious salad with ripe tomatoes, fresh mozzarella, basil leaves, drizzled with balsamic glaze and olive oil."
@@ -225,6 +247,7 @@
       "food_category": "India",
       "quantity": 20,
       "price": 9,
+      "count": 0,
       "added_by": "Chef Sofia",
       "food_origin_country": "Italy",
       "description": "A simple and delicious salad with ripe tomatoes, fresh mozzarella, basil leaves, drizzled with balsamic glaze and olive oil."
@@ -235,6 +258,7 @@
       "food_category": "India",
       "quantity": 20,
       "price": 9,
+      "count": 0,
       "added_by": "Chef Sofia",
       "food_origin_country": "Italy",
       "description": "A simple and delicious salad with ripe tomatoes, fresh mozzarella, basil leaves, drizzled with balsamic glaze and olive oil."

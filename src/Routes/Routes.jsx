@@ -14,6 +14,7 @@ import Purchase from "../Pages/Purchase/Purchase";
 import AddFood from "../Pages/AddFood/AddFood";
 import OrderedFood from "../Pages/OrcderedFood/OrderedFood";
 import UpdateFood from "../Pages/UpdateFood/UpdateFood";
+import UserProfile from "../Pages/UserProfile/UserProfile";
 
 const router = createBrowserRouter([
   {
@@ -51,14 +52,16 @@ const router = createBrowserRouter([
           loader: ()=> fetch('https://assignment11-server-side-chi.vercel.app/api/v1/allFood')
         },
         {
-          path: 'updateFood',
-          element: <UpdateFood></UpdateFood>
+          path: 'updateFood/:id',
+          element: <UpdateFood></UpdateFood>,
+          loader: ({params})=> fetch(`https://assignment11-server-side-chi.vercel.app/api/v1/allFood/${params.id}`)
           
         },
         {
           path: 'orderdFood',
           element: <OrderedFood></OrderedFood>
-        }
+        },
+       
         
 
     ]
@@ -71,6 +74,9 @@ const router = createBrowserRouter([
     path: 'register',
     element: <Register></Register>
   },
-  
+  {
+    path: 'userProfile',
+    element: <UserProfile></UserProfile>
+  }
 ]);
 export default router;

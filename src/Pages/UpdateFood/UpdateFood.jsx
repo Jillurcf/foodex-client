@@ -1,10 +1,12 @@
 import axios from "axios";
 import Swal from "sweetalert2";
 import UseAuth from "../../Hooks/UseAuth";
-import { useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 const UpdateFood = () => {
+  const newAddedData = useLoaderData();
+  console.log(newAddedData);
 const {user} = UseAuth()
 const {id} = useParams()
 
@@ -16,6 +18,7 @@ const {id} = useParams()
         const food_category = form.category.value;
         const quantity = form.quantity.value;
         const price = form.price.value;
+        const count = form.count.value;
         const userName = form.userName.value;
         const email = form.userEmail.value;
         const origin = form.origin.value;
@@ -27,6 +30,7 @@ const {id} = useParams()
           food_category,
           quantity,
           price,
+          count,
           userName,
           email,
           origin,
@@ -35,7 +39,7 @@ const {id} = useParams()
         console.log(updateFood);
     
         axios.put(
-          `https://assignment11-server-side-chi.vercel.app/api/v1/allFood/update/${id}`,
+          `https://assignment11-server-side-chi.vercel.app/api/v1/allFood/${id}`,
          updateFood,
           { withCredentials: true }
         )
@@ -45,7 +49,7 @@ const {id} = useParams()
         Swal.fire("Food Updated");
       
       };
-
+    
     return (
         <div>
           <Helmet>
@@ -73,6 +77,7 @@ const {id} = useParams()
                       <input
                         type="text"
                         name="foodName"
+                        defaultValue={newAddedData.food_name}
                         className="input input-bordered"
                         required
                       />
@@ -84,6 +89,7 @@ const {id} = useParams()
                       <input
                         type="text"
                         name="image"
+                        defaultValue={newAddedData.food_image}
                         className="input input-bordered"
                         required
                       />
@@ -95,6 +101,7 @@ const {id} = useParams()
                       <input
                         type="text"
                         name="category"
+                        defaultValue={newAddedData.food_category}
                         className="input input-bordered"
                         required
                       />
@@ -106,6 +113,7 @@ const {id} = useParams()
                       <input
                         type="number"
                         name="quantity"
+                        defaultValue={newAddedData.quantity}
                         className="input input-bordered"
                         required
                       />
@@ -117,6 +125,19 @@ const {id} = useParams()
                       <input
                         type="number"
                         name="price"
+                        defaultValue={newAddedData.price}
+                        className="input input-bordered"
+                        required
+                      />
+                    </div>
+                    <div className="form-control">
+                      <label className="label">
+                        <span className="label-text">Count</span>
+                      </label>
+                      <input
+                        type="number"
+                        name="count"
+                        defaultValue={newAddedData.count}
                         className="input input-bordered"
                         required
                       />
@@ -147,6 +168,7 @@ const {id} = useParams()
                       <input
                         type="text"
                         name="origin"
+                        defaultValue={newAddedData.origin}
                         className="input input-bordered"
                         required
                       />
@@ -158,6 +180,7 @@ const {id} = useParams()
                       <input
                         type="text"
                         name="description"
+                        defaultValue={newAddedData.description}
                         className="input input-bordered"
                         required
                       />

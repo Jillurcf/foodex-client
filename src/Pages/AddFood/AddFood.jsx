@@ -62,7 +62,7 @@ const AddFood = () => {
       { withCredentials: true }
     );
     Swal.fire("Food Added");
-    window.reload()
+   e.target.reset()
   };
 
 
@@ -86,7 +86,9 @@ const AddFood = () => {
     // }
 }
 
-
+// const handleUpdate = (id)=>{
+  
+// }
 
 
   return (
@@ -154,7 +156,7 @@ const AddFood = () => {
                             <td>
                               <div className="btn-group btn-group-vertical lg:btn-group-horizontal">
                                 <button  className="btn btn-active">
-                                <Link to="/updateFood"> Update</Link>
+                                <Link to={`/updateFood/${adFood._id}`}> Update</Link>
                                 </button>
                                 <button onClick={()=> handleDelete(adFood._id)} className="btn">X</button>
                                

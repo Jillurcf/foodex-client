@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 
 const AllFoodCard = ({ food }) => {
-  const {_id, food_image, food_name, food_category, price, quantity } = food;
+  const {_id, food_image, food_name, food_category, price, quantity, count } = food;
 
    return (
     <div className="">
