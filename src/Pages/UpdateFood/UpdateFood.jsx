@@ -37,7 +37,10 @@ const {id} = useParams()
           `https://assignment11-server-side-chi.vercel.app/api/v1/allFood/update/${id}`,
          updateFood,
           { withCredentials: true }
-        );
+        )
+        .then(res=> {
+          console.log(res.data);
+        })
         Swal.fire("Food Updated");
       
       };
