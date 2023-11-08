@@ -2,11 +2,13 @@ import { useState } from "react";
 import { useEffect } from "react";
 import UseAuth from "../../Hooks/UseAuth";
 import { Helmet } from "react-helmet-async";
+import Swal from "sweetalert2";
 // import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 const OrderedFood = () => {
   const { user } = UseAuth();
   const [orderedFood, setOrderedFood] = useState([]);
+  
   // const axiosSecure = useAxiosSecure()
   console.log(orderedFood);
 
@@ -26,6 +28,27 @@ const OrderedFood = () => {
         .then((data) => setOrderedFood(data));
     }
   }, [user]);
+
+
+  const handleDelete = id =>{
+    Swal.fire('are you sure you want to delete?')
+     // Swal.fire('are you sure you want to delete?')
+     // if(proceed){
+        
+     fetch(`https://assignment11-server-side-chi.vercel.app/api/v1/purchase/delete/${id}`, {
+             method: 'DELETE'
+         })
+         .then(res => res.json())
+         .then(data => {
+             console.log(data);
+             if(data.deletedCount > 0){
+                 Swal.fire('successfull')
+                 const remaining = orderedFood.filter(food => food._id !== id)
+                 setOrderedFood(remaining)
+             }
+         })
+     // }
+ }
 
   return (
     <div>
@@ -60,6 +83,7 @@ const OrderedFood = () => {
                     <th>Price</th>
                     <th>Added Time</th>
                     <th>Food Owner</th>
+                    <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -94,6 +118,9 @@ const OrderedFood = () => {
                     <td>{user?.metadata.lastSignInTime}</td>
                     <th>
                       <button className="btn btn-ghost btn-xs">{user?.displayName}</button>
+                    </th>
+                    <th>
+                      <button onClick={()=>handleDelete(food._id)} className="btn btn-ghost btn-xs">X</button>
                     </th>
                   </tr>
                         )

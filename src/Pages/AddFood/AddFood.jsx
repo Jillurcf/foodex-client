@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 // import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 const AddFood = () => {
@@ -90,6 +91,9 @@ const AddFood = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>FoodHero | Add Fodd</title>
+      </Helmet>
       <div
         className="hero min-h-screen"
         style={{

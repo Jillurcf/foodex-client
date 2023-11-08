@@ -2,6 +2,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import UseAuth from "../../Hooks/UseAuth";
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const UpdateFood = () => {
 const {user} = UseAuth()
@@ -47,6 +48,9 @@ const {id} = useParams()
 
     return (
         <div>
+          <Helmet>
+        <title>FoodHero | Update Fodd</title>
+      </Helmet>
                <div
         className="hero min-h-screen"
         style={{
@@ -61,7 +65,7 @@ const {id} = useParams()
                
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl ">
                   <form onSubmit={handleUpdateFood} className=" mt-36 card-body">
-                    <h1 className="text-2xl font-bold">Please add Food</h1>
+                    <h1 className="text-2xl font-bold">Update Food</h1>
                     <div className="form-control">
                       <label className="label">
                         <span className="label-text">Food Name</span>
