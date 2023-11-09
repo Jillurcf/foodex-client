@@ -64,12 +64,11 @@ const NavBar = () => {
       .catch((error) => console.log(error));
   };
   return (
-    
       <div className=" pt-8 w-full fixed z-40">
         <div className="navbar lg:h-24 opacity-80">
           <div className="navbar-start lg:pl-60">
             <div className="dropdown">
-              <label tabIndex={0} className="btn btn-ghost lg:hidden">
+              <label tabIndex={0} className="btn btn-ghost text-blue-600 lg:hidden">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"

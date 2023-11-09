@@ -38,7 +38,7 @@ const OrderedFood = () => {
      fetch(`https://assignment11-server-side-chi.vercel.app/api/v1/purchase/delete/${id}`, {
              method: 'DELETE'
          })
-         .then(res => res.json())
+         .then(res => res.json()) 
          .then(data => {
              console.log(data);
              if(data.deletedCount > 0){
