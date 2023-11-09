@@ -16,9 +16,13 @@ const {id} = useParams()
         const food_name = form.foodName.value;
         const food_image = form.image.value;
         const food_category = form.category.value;
-        const quantity = form.quantity.value;
-        const price = form.price.value;
-        const count = form.count.value;
+        const stringquantity = form.quantity.value;
+        const quantity = parseInt(stringquantity);
+        const stringprice = form.price.value;
+        const price = parseInt(stringprice)
+        const stringcount = form.count.value;
+        const count = parseInt(stringcount);
+
         const userName = form.userName.value;
         const email = form.userEmail.value;
         const origin = form.origin.value;

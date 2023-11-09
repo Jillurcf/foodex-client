@@ -36,8 +36,12 @@ const AddFood = () => {
     const food_name = form.foodName.value;
     const food_image = form.image.value;
     const food_category = form.category.value;
-    const quantity = form.quantity.value;
-    const price = form.price.value;
+    const stringquantity = form.quantity.value;
+    const quantity = parseInt(stringquantity)
+    const stringprice = form.price.value;
+    const price  = parseInt(stringprice);
+    const stringcount = form.count.value;
+    const count = parseInt(stringcount)
     const userName = form.userName.value;
     const email = form.userEmail.value;
     const origin = form.origin.value;
@@ -49,6 +53,7 @@ const AddFood = () => {
       food_category,
       quantity,
       price,
+      count,
       userName,
       email,
       origin,
@@ -237,6 +242,17 @@ Swal.fire({
                       <input
                         type="number"
                         name="price"
+                        className="input input-bordered"
+                        required
+                      />
+                    </div>
+                    <div className="form-control">
+                      <label className="label">
+                        <span className="label-text">Count:</span>
+                      </label>
+                      <input
+                        type="number"
+                        name="count"
                         className="input input-bordered"
                         required
                       />
