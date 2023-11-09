@@ -64,10 +64,11 @@ const OrderedFood = () => {
       >
         <div className="hero-overlay bg-opacity-90"></div>
         <div className="hero-content text-center text-neutral-content">
-          <div className="">
+          <div className="lg:max-w-md max-w-xs">
             <h1 className="text-blue-600 font-bold text-2xl mb-4">My Order History</h1>
+         
             <div className="overflow-x-auto">
-              <table className="table">
+              <table className="table table-xs">
                
                 {/* head */}
                 <thead className="text-white">
@@ -129,6 +130,9 @@ const OrderedFood = () => {
                 
               </table>
             </div>
+
+
+
           </div>
         </div>
       </div>

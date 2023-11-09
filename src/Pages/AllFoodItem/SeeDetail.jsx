@@ -42,7 +42,7 @@ const SeeDetail = () => {
               <p className="text-center">{seeDetails.description}</p>
             </div>
             <div className="absolute top-[50%] left-[50%] card-actions justify-center">
-              <button className="btn btn-secondary  w-96">
+              <button className="btn btn-secondary  lg:w-96">
               {
             seeDetails.quantity == 0 ? "no food available"
             :

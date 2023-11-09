@@ -39,7 +39,7 @@ const Blog = () => {
       <div
         className="hero min-h-screen"
         style={{
-          backgroundImage: "url(https://i.ibb.co/LN42P45/blog.jpg)",
+          backgroundImage: "url( https://i.ibb.co/LN42P45/blog.jpg )",
         }}
       >
         <div className="hero-overlay lg:w-2/3 bg-opacity-80">

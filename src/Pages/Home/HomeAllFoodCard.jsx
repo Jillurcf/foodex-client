@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 // import Swal from "sweetalert2";
 
 const HomeAllFoodCard = ({food}) => {
@@ -11,7 +11,7 @@ const HomeAllFoodCard = ({food}) => {
 
       const handleCount = (id)=>{      const updateCount = count + 1;
       setPresentCount(updateCount)
-      axios.put(`https://assignment11-server-side-chi.vercel.app/api/v1/allFood/${id}`, {count: updateCount}, { withCredentials: true }
+      axios.put(`https://assignment11-server-side-chi.vercel.app/api/v1/allFood/update/${id}`, {count: updateCount}, { withCredentials: true }
       )
       .then(res=> {
         console.log(res.data);

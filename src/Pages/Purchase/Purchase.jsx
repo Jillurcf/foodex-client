@@ -4,13 +4,21 @@ import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { useLoaderData } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
 
 const Purchase = () => {
+ 
   const seeDetails = useLoaderData();
+  const [presentQuantity, setPresentQuantity] = useState(seeDetails.quantity)
+  const [purchaseQuantity, setPurchaseQuantity] = useState(0)
+  console.log(purchaseQuantity);
  console.log(seeDetails._id);
     const {user} = UseAuth()
     // console.log(user.email);
+
     const axiosSecure = useAxiosSecure();
+
     const handlePurchase = e =>{
         e.preventDefault()
         const form = e.target;
@@ -18,19 +26,45 @@ const Purchase = () => {
         const foodImage = form.foodImage.value;
         const price = form.price.value;
         const quantity = form.quantity.value;
+        console.log(quantity);
+        setPurchaseQuantity(quantity)
         const name = user.displayName
         const email = user.email;
         const buyingDate = form.buyingDate.value;
         const purchase = {foodName, foodImage, price, quantity, name, email, buyingDate}
         console.log(purchase);
-        
+       if(seeDetails.quantity <= 0 ){
+        Swal.fire("NO Available quanity")
+       }
+       else if(user?.email === seeDetails.email){
+        Swal.fire('Sorry You can not buy your added Product')
+       }
+       else{
         axiosSecure.post('https://assignment11-server-side-chi.vercel.app/api/v1/purchase', purchase, {withCredentials: true})
-       .then(res => {
-        console.log(res.data);
-        Swal.fire('Purchase successfull')
-        
-       })    
+        .then(res => {
+         console.log(res.data);
+         Swal.fire('Purchase successfull')
+         
+        })    
+       }
+       
     }
+
+
+    const handleQuantity = (id)=>{
+    
+      const updateQuantity =presentQuantity - purchaseQuantity ;
+      console.log(updateQuantity);
+      setPurchaseQuantity(updateQuantity)
+      console.log(purchaseQuantity);
+      axios.put(`https://assignment11-server-side-chi.vercel.app/api/v1/allFood/quantity/${id}`, {quantity: updateQuantity}, { withCredentials: true }
+      )
+      .then(res=> {
+        console.log(res.data);
+      })
+    }
+
+
   return (
     <div>
       <Helmet>
@@ -72,7 +106,7 @@ const Purchase = () => {
           <label className="label">
             <span className="label-text">Quantity</span>
           </label>
-          <input type="number" name="quantity" className="input input-bordered" required />
+          <input type="number" name="quantity" defaultValue={seeDetails.quantity} className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
@@ -94,7 +128,7 @@ const Purchase = () => {
         </div>
        
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Purchase</button>
+          <button onClick={()=>handleQuantity(seeDetails._id)} className="btn btn-primary">Purchase</button>
         </div>
       </form>
     </div>

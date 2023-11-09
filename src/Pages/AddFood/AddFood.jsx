@@ -107,13 +107,13 @@ const AddFood = () => {
           <div className="max-w-md">
             <div className="hero min-h-screen ">
               <div className="hero-content flex-col lg:flex-row-reverse">
-                <div className="text-center lg:text-left">
+                <div className="lg:max-w-md max-w-xs">
                   <h1>Food Added By: {user?.displayName}</h1>
 
                   {/* add food */}
                   {addedFood.map((adFood) => (
                     <div key={adFood._Id} className="overflow-x-auto">
-                      <table className="table">
+                      <table className="table table-xs">
                         {/* head */}
                         <thead>
                           <tr>
@@ -168,6 +168,7 @@ const AddFood = () => {
                     </div>
                   ))}
                 </div>
+                <div className="hero min-h-screen">
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl ">
                   <form onSubmit={handleAddFood} className=" mt-36 card-body">
                     <h1 className="text-2xl font-bold">Please add Food</h1>
@@ -271,6 +272,7 @@ const AddFood = () => {
                       <button className="btn btn-primary">Add Food</button>
                     </div>
                   </form>
+                </div>
                 </div>
               </div>
             </div>
