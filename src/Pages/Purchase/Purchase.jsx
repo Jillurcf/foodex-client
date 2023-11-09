@@ -45,7 +45,11 @@ const Purchase = () => {
       Swal.fire("NO Available quanity");
     } else if (user?.email === seeDetails.email) {
       Swal.fire("Sorry You can not buy your added Product");
-    } else {
+    } 
+    else if( purchaseQuantity > seeDetails.quantity){
+      Swal.fire("Please see Product Quantity")
+    }
+    else {
       axiosSecure
         .post(
           "https://assignment11-server-side-chi.vercel.app/api/v1/purchase",
