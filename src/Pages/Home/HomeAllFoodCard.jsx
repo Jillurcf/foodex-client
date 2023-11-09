@@ -43,6 +43,7 @@ const HomeAllFoodCard = ({food}) => {
             </div>
             <button onClick={()=>handleCount(_id)} className="mt-12 btn btn-outline btn-secondary font-bold mx-auto flex w-full"><Link to={`/seeDetail/${_id}`}>See Details</Link></button>
           </div>
+          <button>Purchase</button>
         </div>
       </div>
         </div>
