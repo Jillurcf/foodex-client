@@ -49,6 +49,9 @@ const Purchase = () => {
     else if( purchaseQuantity > seeDetails.quantity){
       Swal.fire("Please see Product Quantity")
     }
+    else if(purchaseQuantity < 0){
+      Swal.fire("Please try again")
+    }
     else {
       axiosSecure
         .post(
