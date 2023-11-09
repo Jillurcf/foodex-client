@@ -49,9 +49,9 @@ const Purchase = () => {
     else if( purchaseQuantity > seeDetails.quantity){
       Swal.fire("Please see Product Quantity")
     }
-    else if(purchaseQuantity < 0){
-      Swal.fire("Please try again")
-    }
+    // else if(purchaseQuantity < 0){
+     
+    // }
     else {
       axiosSecure
         .post(
@@ -68,6 +68,9 @@ const Purchase = () => {
 
   const handleQuantity = (id) => {
     const inputValue = inputRef.current.value;
+    if(inputValue < 0){
+     return Swal.fire("Please try again")
+    }
     setPurchaseQuantity(inputValue);
     const updateQuantity = seeDetails.quantity - inputValue;
 
