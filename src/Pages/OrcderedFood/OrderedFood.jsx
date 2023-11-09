@@ -31,23 +31,38 @@ const OrderedFood = () => {
 
 
   const handleDelete = id =>{
-    Swal.fire('are you sure you want to delete?')
-     // Swal.fire('are you sure you want to delete?')
-     // if(proceed){
-        
+  
+
+     Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+             
      fetch(`https://assignment11-server-side-chi.vercel.app/api/v1/purchase/delete/${id}`, {
-             method: 'DELETE'
-         })
-         .then(res => res.json()) 
-         .then(data => {
-             console.log(data);
-             if(data.deletedCount > 0){
-                 Swal.fire('successfull')
-                 const remaining = orderedFood.filter(food => food._id !== id)
-                 setOrderedFood(remaining)
-             }
-         })
-     // }
+      method: 'DELETE'
+           
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire("Deleted!", "Your Product has been deleted.", "success");
+              const remining = orderedFood.filter(food => food._id !== id)
+              setOrderedFood(remining)
+            }
+          });
+      }
+    });
+
+
+
+
  }
 
   return (
